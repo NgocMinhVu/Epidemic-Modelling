@@ -23,3 +23,11 @@ times <- 0:365
 model <- ode(initial_state, times, SEIR, params)
 
 summary(model)
+
+# Plot using matplot
+matplot(model, type='l', lty=1, main='SEIR model', xlab='Time')
+
+legend <- colnames(model)[2:6]
+legend('right', legend=legend, col=2:6, lty = 1)
+
+
